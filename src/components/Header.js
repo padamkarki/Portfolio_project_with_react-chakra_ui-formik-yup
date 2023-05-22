@@ -1,34 +1,29 @@
 import React, { useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
   faGithub,
   faLinkedin,
-  faMedium,
-  faStackOverflow,
+  faInstagram,
+  faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import { Box, HStack, Icon } from "@chakra-ui/react";
+import { Box, HStack, Link } from "@chakra-ui/react";
 
 const socials = [
   {
-    icon: faEnvelope,
-    url: "mailto: hello@example.com",
-  },
-  {
     icon: faGithub,
-    url: "https://github.com",
+    url: "https://github.com/padamkarki",
   },
   {
     icon: faLinkedin,
-    url: "https://www.linkedin.com",
+    url: "https://www.linkedin.com/in/padamkarki",
   },
   {
-    icon: faMedium,
-    url: "https://medium.com",
+    icon: faInstagram,
+    url: "https://www.instagram.com/padamkarki23",
   },
   {
-    icon: faStackOverflow,
-    url: "https://stackoverflow.com",
+    icon: faYoutube,
+    url: "https://www.youtube.com/@KKBPictures",
   },
 ];
 
@@ -74,7 +69,7 @@ const Header = () => {
     const icons = social.icon;
     const links = social.url;
     return (
-      <a href={links} key={url}>
+      <a href={links} target="_blank" rel="noopener noreferrer" key={url}>
         {<FontAwesomeIcon icon={icons} size="2x" key={url} />}
       </a>
     );
@@ -107,12 +102,12 @@ const Header = () => {
           <nav>
             <HStack spacing={8}>
               {/* Add links to Projects and Contact me section */}
-              <a href="projects" onClick={handleClick("projects")}>
+              <Link href="projects" onClick={handleClick("projects")}>
                 Projects
-              </a>
-              <a href="#contact-me" onClick={handleClick("contactme")}>
+              </Link>
+              <Link href="#contact-me" onClick={handleClick("contactme")}>
                 Contact Me
-              </a>
+              </Link>
             </HStack>
           </nav>
         </HStack>
